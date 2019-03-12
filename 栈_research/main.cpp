@@ -1,55 +1,27 @@
 #include <iostream>
 #include "stack.h"
+#include "LStack.h"
 //#define _CRT_SECURE_NO_WARNINGS
 
 using namespace std;
 
 
-void LineEdit(SqStack &S)
-{
-	//构造空栈
-	InitStack_Sq(S,10,4);
-
-	char ch = getchar();
-
-	while (ch != EOF)
-	{
-		while (ch != EOF && ch != '\n')
-		{
-			switch (ch)
-			{
-			case '#':
-				Pop(S, ch);
-				break;
-			case '@':
-				//置为空栈
-				ClearStack(S);
-				break;
-			default:
-				//有效字符进栈，未考虑栈满情形
-				Push(S, ch);
-				break;
-			}
-			ch = getchar();
-		}
-		//置S为空
-		OutStack_Inv(S);
-		ClearStack(S);
-		if (ch != EOF)
-			ch = getchar();
-	}
-	//销毁栈
-	//DestoryStack(S);
-}
-
 
 
 int main()
 {
-	SqStack S;
-	LineEdit(S);
+	//SqStack S;
+	//LineEdit(S);
+
+	int in[] = {1,2,3,4,5};
 	
-	
+	LStack L;
+	InitLStack(L);
+
+	for (int i = 0; i < 5; i++)
+	{
+		push(in[i], L);
+	}
 
 	return 0;
 }

@@ -59,7 +59,7 @@ void DestoryStack(SqStack &S)
 }
 
 //出栈
-Status Pop(SqStack &S, ElemType &e)
+Status pop(SqStack &S, ElemType &e)
 {
 	//判断栈是否为空
 	if (S.top == 0) //如果top变量为指针则为（S.top==S.elem）
@@ -71,7 +71,7 @@ Status Pop(SqStack &S, ElemType &e)
 
 
 //入栈
-Status Push(SqStack &S, ElemType e)
+Status push(SqStack &S, ElemType e)
 {
 	//判断栈是否为满
 	if (S.top >= S.size) //如果top变量为指针则为（S.top-S.elem>=S.size）
@@ -95,7 +95,7 @@ void OutStack(SqStack S)
 	//SqStack L = S;
 	while (S.top)
 	{
-		Pop(S,e);
+		pop(S,e);
 		cout << e << " ";
 	}
 	cout << endl;
@@ -113,13 +113,13 @@ void OutStack_Inv(SqStack S)
 
 	while (S.top)
 	{
-		Pop(S, e);
-		Push(S0, e);
+		pop(S, e);
+		push(S0, e);
 	}
 
 	while (S0.top)
 	{
-		Pop(S0, e);
+		pop(S0, e);
 		cout << e << " ";
 	}
 	cout << endl;
