@@ -22,6 +22,6 @@ int main()
 	{
 		push(in[i], L);
 	}
-
+	LStackoutput(L);
 	return 0;
 }

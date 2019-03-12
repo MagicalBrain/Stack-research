@@ -34,7 +34,7 @@ typedef struct
 Status InitLStack(LStack &L)
 {
 	L.elem = NULL;
-	L.top = L.elem;
+	L.top = NULL;
 	L.size = 0;
 	return OK;
 }
@@ -60,21 +60,22 @@ Status push(int e, LStack &L)
 			return OVERFLOW;
 		L.elem->data = e;
 		L.elem->next = NULL;
-		L.top = L.elem; 
+		L.top = L.elem->next; 
 		L.size++;
 		return OK;
 	}
 	else
 	{
-		LSNode *p = L.top;
-		
+		LSNode *p = L.elem;
+		while (p->next != L.top)
+			p = p->next;
 		LSNode *q = (LSNode*)malloc(sizeof(LSNode));
 		if (q == NULL)
 			return OVERFLOW;
 		q->data = e;
 		q->next = p->next;
 		p->next = q;
-		L.top = p->next;
+		L.top = q->next;
 		L.size++;
 		return OK;
 	}
@@ -87,18 +88,32 @@ Status pop(int &x,LStack &L)
 		return FALSE;
 
 	LSNode *p = L.elem;
+	LSNode*q = p;
 	while (p->next != L.top)
 	{
+		q = p;
 		p = p->next;
 	}
-	LSNode*q = L.top;
-	p->next = q->next;
-	x = q->data;
-	free(q);
-	L.top = p;
+	q->next = L.top;
+	//p->next = q->next;
+	x = p->data;
+	free(p);
+	L.top = q->next;
 	L.size--;
 	return OK;
 }
 
 
 //链栈的销毁
+
+//链栈的输出函数
+void LStackoutput(LStack L)
+{
+	int x;
+	while (L.size!=0)
+	{
+		pop(x, L);
+		cout << x << endl;
+	}
+	
+}
