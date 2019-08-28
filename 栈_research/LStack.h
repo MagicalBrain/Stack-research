@@ -3,7 +3,7 @@
 
 using namespace std;
 
-#define ElemType char
+#define ElemType char	//元素的类型
 
 #define TRUE 1
 #define FALSE 0
@@ -17,7 +17,7 @@ typedef int Status;
 //链栈结点定义
 typedef struct LSNode
 {
-	int data;
+	ElemType data;
 	LSNode *next;
 }LSNode;
 
@@ -51,7 +51,7 @@ Status isEmpty(LStack L)
 
 
 //入栈
-Status push(int e, LStack &L)
+Status push(ElemType e, LStack &L)
 {
 	if (isEmpty(L))
 	{
@@ -82,7 +82,7 @@ Status push(int e, LStack &L)
 }
 
 //出栈
-Status pop(int &x,LStack &L)
+Status pop(ElemType &x,LStack &L)
 {
 	if (isEmpty(L))
 		return FALSE;
@@ -109,7 +109,7 @@ Status pop(int &x,LStack &L)
 //链栈的输出函数
 void LStackoutput(LStack L)
 {
-	int x;
+	ElemType x;
 	while (L.size!=0)
 	{
 		pop(x, L);

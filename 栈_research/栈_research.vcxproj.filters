@@ -29,5 +29,11 @@
     <ClInclude Include="LineEdit.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="Function.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StrError.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

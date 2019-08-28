@@ -36,7 +36,7 @@ Status InitStack_Sq(SqStack &S, int size, int inc)
 
 
 //ÅÐ¿Õº¯Êý
-Status StackBlanks(SqStack S)
+Status isEmpty(SqStack S)
 {
 	if (S.top == 0)
 		return OK;

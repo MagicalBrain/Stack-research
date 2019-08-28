@@ -149,9 +149,11 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Function.h" />
     <ClInclude Include="LineEdit.h" />
     <ClInclude Include="LStack.h" />
     <ClInclude Include="stack.h" />
+    <ClInclude Include="StrError.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
