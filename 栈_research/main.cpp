@@ -2,6 +2,7 @@
 #include "stack.h"
 #include "LStack.h"
 #include "Function.h"
+#include "TestFunc.h"
 //#define _CRT_SECURE_NO_WARNINGS
 
 using namespace std;
@@ -24,7 +25,7 @@ int main()
 {
 	//SqStack S;
 	//LineEdit(S);
-	func03();
+	Testfunc03();
 	
 	return 0;
 }

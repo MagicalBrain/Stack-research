@@ -35,5 +35,14 @@
     <ClInclude Include="StrError.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="LinkList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CreatFunction.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TestFunc.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
