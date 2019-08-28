@@ -18,6 +18,9 @@
     <ClCompile Include="main.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="TemplateStack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stack.h">
@@ -43,6 +46,12 @@
     </ClInclude>
     <ClInclude Include="TestFunc.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TemplateStack.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TemplateLinkList.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

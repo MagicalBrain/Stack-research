@@ -124,3 +124,4 @@ void OutStack_Inv(SqStack S)
 	}
 	cout << endl;
 }
+

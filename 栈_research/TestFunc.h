@@ -43,3 +43,13 @@ bool Testfunc03()
 
 	return true;
 }
+
+void Testfunc04()
+{
+	ElemType a[10] = {};
+	LNodes *L;
+	L = LinkedListInit(0);
+
+	LinkedInput(L, a[10], 10, 0);
+
+}

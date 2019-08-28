@@ -147,6 +147,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="TemplateStack.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CreatFunction.h" />
@@ -156,6 +157,8 @@
     <ClInclude Include="LStack.h" />
     <ClInclude Include="stack.h" />
     <ClInclude Include="StrError.h" />
+    <ClInclude Include="TemplateLinkList.h" />
+    <ClInclude Include="TemplateStack.h" />
     <ClInclude Include="TestFunc.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

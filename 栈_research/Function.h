@@ -43,9 +43,16 @@ bool func03(char s1[9])
 	return true;
 }
 
-bool func04()
+bool func04(LNodes* L)
 //《王道》 3.1 栈 综合题 T4
 {
+	LNodes *p, *q;
 
-	return true;
+	if (L != NULL)
+	{
+		q = L;
+		return true;
+	}
+
+	return false;
 }

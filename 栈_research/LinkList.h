@@ -5,7 +5,7 @@
 
 using namespace std;
 
-#define ElemType int
+#define ElemType char
 
 typedef struct LNodes
 {
@@ -480,7 +480,7 @@ LNodes* LinkListDestroy(LNodes* L,int tou)
 
 //给链表输入数据
 ////带头结点的
-void LinkedInput(LinkedList &L, int a[], int length,int tou) {
+void LinkedInput(LinkedList &L, ElemType a[], int length,int tou) {
 	/*参数:
 	tou: 
 		1:初始化成带头结点的
