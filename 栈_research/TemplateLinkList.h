@@ -10,9 +10,20 @@ class LNode_T
 {
 private:
 	Type data;
-	class LNodes_T *next;
+	class LNode_T* next;
 public:
 	LNode_T(int tou);
+	void copy(LNode_T p)
+	{
+		this->data = p->data;
+		this->next = p->next;
+	}
+	void copy(LNode_T *p)
+	{
+		this->data = p->data;
+		this->next = p->next;
+	}
+	//LNode_T*(int tou);
 	int Length(int tou);
 	//bool isEmpty() const;
 	//bool isFull() const;
@@ -20,9 +31,12 @@ public:
 	int GetElem(int tou, int loca);
 	int LinkListInsert(int tou, Type e, int loca);
 	void LinkListDelete(int tou, Type e);
-	bool pop(Type&item);
-	void OutStack();
+	//bool pop(Type& item);
+	bool LinkedOutput_T(int tou);
+	void LinkedInput_T(Type a[], int length, int tou);
 };
+// LinkedList_T, LNode_T*;
+
 
 template<class Type>
 LNode_T<Type>::LNode_T(int tou)
@@ -34,9 +48,11 @@ LNode_T<Type>::LNode_T(int tou)
 	}
 	//将next设置为NULL,初始长度为0的单链表
 	else
-		this = NULL;//将next设置为NULL,初始长度为0的单链表   
+		this->copy(NULL);// = NULL;//将next设置为NULL,初始长度为0的单链表   
 	//return L;
 }
+
+
 
 template<class Type>
 int LNode_T<Type>::Length(int tou)
@@ -304,4 +320,83 @@ void LNode_T<Type>::LinkListDelete(int tou, Type e)
 
 		}
 	}
+}
+
+
+//给链表输入数据
+////带头结点的
+template<class Type>
+void LNode_T<Type>::LinkedInput_T(Type a[], int length, int tou)
+{
+	/*参数:
+	tou:
+		1:初始化成带头结点的
+		0：~不带头节点的
+	*/
+	if (tou)
+	{
+		
+		LNode_T<Type>* q = this;
+		for (int i = length - 1; i >= 0; --i)
+		{
+			LNode_T<Type> p0(1);
+			LNode_T<Type>* p = new LNode_T<Type>(1);
+			p->data = a[i];
+			p->next = q->next;
+			q->next = p;
+		}
+	}
+	else
+	{
+		LNode_T<Type>* q = this;
+		//q->data = a[0];
+		for (int i = length - 1; i >= 0; --i)
+		{
+			LNode_T<Type> p0(1);
+			LNode_T<Type>* p = new LNode_T<Type>(1);
+			//LNodes* p = (LinkedList)malloc(sizeof(LNodes));
+			p->data = a[i];
+			p->next = this;
+			this->copy(p);// = p;
+		}
+	}
+
+}
+
+template<class Type>
+bool LNode_T<Type>::LinkedOutput_T(int tou)
+{
+	if (tou)
+	{
+		if (this->next != NULL)
+		{
+			//LNodes* p = L->next;
+			LNode_T<Type>* p = new LNode_T<Type>(1);
+			p = this->next;
+			while (p != NULL)
+			{
+				cout << p->data << " ,";
+				p = p->next;
+
+			}
+			cout << endl;
+			return true;
+		}
+	}
+	else
+	{
+		if (this != NULL)
+		{
+			LNode_T<Type>* p = new LNode_T<Type>(1);
+			p = this->next;
+			while (p != NULL)
+			{
+				cout << p->data << " ";
+				p = p->next;
+			}
+			cout << endl;
+			return 1;
+		}
+	}
+	return false;
 }

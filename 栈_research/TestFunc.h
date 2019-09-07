@@ -49,12 +49,14 @@ bool Testfunc03()
 /*
 * 判断全部字符是否中心对称
 */
+//template<class Type>
 void Testfunc04()
 {
-	ElemType a[10] = {};
-	LNodes *L;
-	L = LinkedListInit(0);
-
+	int a[5] = {1,2,3,4,5};
+	LNode_T<int> L(1);
+	//L = LinkedListInit(0);
+	L.LinkedInput_T(a, 5, 1);
+	L.LinkedOutput_T(1);
 	//LinkedInput(L, a[10], 10, 0);
 
 }

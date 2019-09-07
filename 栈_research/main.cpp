@@ -25,7 +25,8 @@ int main()
 {
 	//SqStack S;
 	//LineEdit(S);
-	Testfunc03();
-	
+	//Testfunc03();
+	//template<class Type> 
+	Testfunc04();
 	return 0;
 }

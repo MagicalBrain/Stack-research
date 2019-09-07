@@ -58,6 +58,7 @@ bool func04(LNodes* L)
 		while (p)
 		{
 			if (p->data == q->data)
+				;
 		}
 
 		return true;
