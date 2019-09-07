@@ -16,7 +16,7 @@ private:
 	int size;
 	int increment;
 public:
-	Stack();
+	Stack_T(int size, int inc);
 	bool isEmpty() const;
 	bool isFull() const;
 	bool ClearStack() const;
@@ -28,7 +28,7 @@ public:
 };
 
 template<class Type>
-Stack_T<Type>::Stack(int size, int inc)
+Stack_T<Type>::Stack_T(int size, int inc)
 {
 	elem = (ElemType*)malloc(size * sizeof(ElemType));
 	if (NULL == S.elem) return OVERFLOW; 
@@ -38,33 +38,33 @@ Stack_T<Type>::Stack(int size, int inc)
 }
 
 template<class Type>
-Stack_T<Type>::isEmpty()
+bool Stack_T<Type>::isEmpty() const
 {
 	return top == 0;
 }
 
 template<class Type>
-Stack_T<Type>::isFull()
+bool Stack_T<Type>::isFull() const
 {
 	return top == MAX;
 }
 
 template<class Type>
-Stack_T<Type>::ClearStack()
+bool Stack_T<Type>::ClearStack() const
 {
 	top = 0;
 	return true;
 }
 
 template<class Type>
-Stack_T<Type>::DestroyStack() const
+bool Stack_T<Type>::DestroyStack() const
 {
 	free(elem);
 	return true;
 }
 
 template<class Type>
-Stack_T<Type>::push(const Type& item)
+bool Stack_T<Type>::push(Type& item)
 {
 	if (top < size)
 	{
@@ -76,7 +76,7 @@ Stack_T<Type>::push(const Type& item)
 }
 
 template<class Type>
-Stack_T<Type>::push_inc(const Type& item)
+bool Stack_T<Type>::push_inc(Type& item)
 {
 	if (top >= size) //如果top变量为指针则为（S.top-S.elem>=S.size）
 	{
@@ -91,7 +91,7 @@ Stack_T<Type>::push_inc(const Type& item)
 }
 
 template<class Type>
-Stack_T<Type>::pop(const Type& item)
+bool Stack_T<Type>::pop(Type& item)
 {
 	if (top > 0)
 	{
@@ -103,7 +103,7 @@ Stack_T<Type>::pop(const Type& item)
 }
 
 template<class Type>
-Stack_T<Type>::OutStack()
+void Stack_T<Type>::OutStack()
 {
 	Type e;
 	//SqStack L = S;

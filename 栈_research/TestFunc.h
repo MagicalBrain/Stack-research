@@ -50,6 +50,6 @@ void Testfunc04()
 	LNodes *L;
 	L = LinkedListInit(0);
 
-	LinkedInput(L, a[10], 10, 0);
+	//LinkedInput(L, a[10], 10, 0);
 
 }
