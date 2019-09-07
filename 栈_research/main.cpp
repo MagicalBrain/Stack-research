@@ -3,6 +3,8 @@
 #include "LStack.h"
 #include "Function.h"
 #include "TestFunc.h"
+#include "TemplateLinkList.h"
+#include "TemplateStack.h"
 //#define _CRT_SECURE_NO_WARNINGS
 
 using namespace std;

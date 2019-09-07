@@ -3,7 +3,7 @@
 
 using namespace std;
 
-typedef unsigned long Item;
+//typedef unsigned long Item;
 
 template<class Type>
 class LNode_T
@@ -36,7 +36,6 @@ public:
 	void LinkedInput_T(Type a[], int length, int tou);
 };
 // LinkedList_T, LNode_T*;
-
 
 template<class Type>
 LNode_T<Type>::LNode_T(int tou)
@@ -96,7 +95,7 @@ int LNode_T<Type>::Length(int tou)
 template<class Type>
 int LNode_T<Type>::LocateElem(int tou, Type e)
 {
-	LNode_T * p;
+	LNode_T* p;
 	int num = 0;
 	switch (tou)
 	{
@@ -180,7 +179,7 @@ int LNode_T<Type>::GetElem(int tou, int loca)
 template<class Type>
 int LNode_T<Type>::LinkListInsert(int tou, Type e, int loca)
 {
-	LNode_T* p, *q;
+	LNode_T* p, * q;
 	int num = 0;
 	if (loca < 0)
 	{
@@ -269,7 +268,7 @@ int LNode_T<Type>::LinkListInsert(int tou, Type e, int loca)
 template<class Type>
 void LNode_T<Type>::LinkListDelete(int tou, Type e)
 {
-	LNode_T *p, *q;
+	LNode_T* p, * q;
 	int num = 0, l = this->Length(tou);
 
 	if (tou == 1)
@@ -311,7 +310,7 @@ void LNode_T<Type>::LinkListDelete(int tou, Type e)
 				{
 					q->next = p->next;
 					free(p);
-					
+
 				}
 				num++;
 				p = p->next;
@@ -335,7 +334,7 @@ void LNode_T<Type>::LinkedInput_T(Type a[], int length, int tou)
 	*/
 	if (tou)
 	{
-		
+
 		LNode_T<Type>* q = this;
 		for (int i = length - 1; i >= 0; --i)
 		{

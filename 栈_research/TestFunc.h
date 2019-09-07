@@ -9,7 +9,22 @@
 #include "TemplateStack.h"
 #include "TemplateLinkList.h"
 
+
 using namespace std;
+
+void TestfuncTemplateLink()
+{
+	int a[5] = { 1,2,3,4,5 };
+	LNode_T<int> L(1);
+	//L = LinkedListInit(0);
+	L.LinkedInput_T(a, 5, 1);
+	L.LinkedOutput_T(1);
+}
+
+void TestfuncTemplateStack()
+{
+
+}
 
 bool Testfunc03()
 //《王道》 3.1 栈 综合题 T3

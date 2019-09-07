@@ -41,7 +41,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -157,7 +157,9 @@
     <ClInclude Include="LStack.h" />
     <ClInclude Include="stack.h" />
     <ClInclude Include="StrError.h" />
-    <ClInclude Include="TemplateLinkList.h" />
+    <ClInclude Include="TemplateLinkList.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="TemplateStack.h" />
     <ClInclude Include="TestFunc.h" />
   </ItemGroup>
