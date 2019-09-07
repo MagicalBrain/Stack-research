@@ -8,6 +8,8 @@
 #include <stdio.h>
 #include "StrError.h"
 #include "LinkList.h"
+#include "TemplateLinkList.h"
+#include "TemplateStack.h"
 
 using namespace std;
 
@@ -51,6 +53,13 @@ bool func04(LNodes* L)
 	if (L != NULL)
 	{
 		q = L;
+		p = L->next;
+
+		while (p)
+		{
+			if (p->data == q->data)
+		}
+
 		return true;
 	}
 

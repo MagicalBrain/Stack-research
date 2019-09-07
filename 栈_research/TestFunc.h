@@ -6,6 +6,8 @@
 #include "LinkList.h"
 #include "stack.h"
 #include "Function.h"
+#include "TemplateStack.h"
+#include "TemplateLinkList.h"
 
 using namespace std;
 
@@ -44,6 +46,9 @@ bool Testfunc03()
 	return true;
 }
 
+/*
+* 判断全部字符是否中心对称
+*/
 void Testfunc04()
 {
 	ElemType a[10] = {};

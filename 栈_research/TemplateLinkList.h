@@ -19,7 +19,7 @@ public:
 	int LocateElem(int tou, Type e);
 	int GetElem(int tou, int loca);
 	int LinkListInsert(int tou, Type e, int loca);
-	LinkListDelete(int tou, Type e);
+	void LinkListDelete(int tou, Type e);
 	bool pop(Type&item);
 	void OutStack();
 };
@@ -39,7 +39,7 @@ LNode_T<Type>::LNode_T(int tou)
 }
 
 template<class Type>
-LNode_T<Type>::Length(int tou)
+int LNode_T<Type>::Length(int tou)
 {
 	LNode_T* p;
 	int re = 0;
@@ -78,7 +78,7 @@ LNode_T<Type>::Length(int tou)
 }
 
 template<class Type>
-LNode_T<Type>::LocateElem(int tou, Type e)
+int LNode_T<Type>::LocateElem(int tou, Type e)
 {
 	LNode_T * p;
 	int num = 0;
@@ -122,7 +122,7 @@ LNode_T<Type>::LocateElem(int tou, Type e)
 }
 
 template<class Type>
-LNode_T<Type>::GetElem(int tou, int loca)
+int LNode_T<Type>::GetElem(int tou, int loca)
 {
 	LNode_T* p;
 	int num = 0;
@@ -162,7 +162,7 @@ LNode_T<Type>::GetElem(int tou, int loca)
 }
 
 template<class Type>
-LNode_T<Type>::LinkListInsert(int tou, Type e, int loca)
+int LNode_T<Type>::LinkListInsert(int tou, Type e, int loca)
 {
 	LNode_T* p, *q;
 	int num = 0;
@@ -248,8 +248,10 @@ LNode_T<Type>::LinkListInsert(int tou, Type e, int loca)
 	return 0;
 }
 
+//template<class Type>
+//int LNode_T<Type>::LinkListInsert(int tou, Type e, int loca)
 template<class Type>
-LNode_T<Type>::LinkListDelete(int tou, Type e)
+void LNode_T<Type>::LinkListDelete(int tou, Type e)
 {
 	LNode_T *p, *q;
 	int num = 0, l = this->Length(tou);
