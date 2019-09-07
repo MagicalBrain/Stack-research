@@ -23,7 +23,13 @@ void TestfuncTemplateLink()
 
 void TestfuncTemplateStack()
 {
-
+	int a[5] = { 1,2,3,4,5 };
+	Stack_T<int> L(10, 5);
+	//LNode_T<int> L(1);
+	//L = LinkedListInit(0);
+	//L.LinkedInput_T(a, 5, 1);
+	//L.LinkedOutput_T(1);
+	
 }
 
 bool Testfunc03()
