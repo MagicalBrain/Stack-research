@@ -25,10 +25,11 @@ LStackoutput(L);
 
 int main()
 {
-	//SqStack S;
-	//LineEdit(S);
+	//TestfuncTemplateStack();
+	//TestfuncTemplateLink();
+	
 	//Testfunc03();
-	//template<class Type> 
 	Testfunc04();
+
 	return 0;
 }

@@ -19,6 +19,10 @@ public:
 	Stack_T(int size, int inc);
 	bool isEmpty() const;
 	bool isFull() const;
+	Type GetTop()
+	{
+		return elem[top-1];
+	}
 	bool ClearStack() const;
 	bool DestroyStack() const;
 	bool push(Type&item);
@@ -29,12 +33,12 @@ public:
 
 //构造函数
 template<class Type>
-Stack_T<Type>::Stack_T(int size, int inc)
+Stack_T<Type>::Stack_T(int s, int inc)
 {
-	elem = (ElemType*)malloc(size * sizeof(ElemType));
-	if (NULL == S.elem) return OVERFLOW;
+	elem = (Type*)malloc(s * sizeof(Type));
+	if (NULL == elem) return ;
 	top = 0;
-	size = size;
+	size = s;
 	increment = inc;
 }
 
@@ -72,7 +76,7 @@ bool Stack_T<Type>::DestroyStack() const
 template<class Type>
 bool Stack_T<Type>::push(Type& item)
 {
-	if (top < size)
+	if (top < size || top == 0)
 	{
 		elem[top++] = item;
 		return true;
@@ -87,7 +91,7 @@ bool Stack_T<Type>::push_inc(Type& item)
 {
 	if (top >= size) //如果top变量为指针则为（S.top-S.elem>=S.size）
 	{
-		elem = (ElemType*)realloc(elem, (size + increment) * sizeof(ElemType));
+		elem = (Type*)realloc(elem, (size + increment) * sizeof(Type));
 		if (elem == NULL)
 			return OVERFLOW;
 		top = size;
@@ -103,7 +107,7 @@ bool Stack_T<Type>::pop(Type& item)
 {
 	if (top > 0)
 	{
-		item = elem[top--];
+		item = elem[--top];
 		return true;
 	}
 	else
@@ -119,7 +123,7 @@ void Stack_T<Type>::OutStack()
 	while (top)
 	{
 		pop(e);
-		cout << e << " ";
+		cout << e << " ,";
 	}
 	cout << endl;
 }

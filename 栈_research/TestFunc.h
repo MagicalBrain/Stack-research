@@ -25,11 +25,13 @@ void TestfuncTemplateStack()
 {
 	int a[5] = { 1,2,3,4,5 };
 	Stack_T<int> L(10, 5);
-	//LNode_T<int> L(1);
-	//L = LinkedListInit(0);
-	//L.LinkedInput_T(a, 5, 1);
-	//L.LinkedOutput_T(1);
+
+	for (int i = 0; i < 5; i++)
+	{
+		L.push(a[i]);
+	}
 	
+	L.OutStack();
 }
 
 bool Testfunc03()
@@ -74,10 +76,19 @@ bool Testfunc03()
 void Testfunc04()
 {
 	int a[5] = {1,2,3,4,5};
-	LNode_T<int> L(1);
-	//L = LinkedListInit(0);
-	L.LinkedInput_T(a, 5, 1);
+	LNode_T<char> L(1);
+	
+	char* s = "xyxyxx";
+	L.LinkedInput_T(s, 6, 1);
 	L.LinkedOutput_T(1);
+
+	if (func04(&L))
+	{
+		cout << "该字符串是中心对称的！" << endl;
+		L.LinkedOutput_T(1);
+	}
+	else
+		cout << "不是中心对称的！" << endl;
 	//LinkedInput(L, a[10], 10, 0);
 
 }

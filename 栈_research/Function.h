@@ -45,23 +45,45 @@ bool func03(char s1[9])
 	return true;
 }
 
-bool func04(LNodes* L)
+
+bool func04(LNode_T<char>* L)
 //《王道》 3.1 栈 综合题 T4
 {
-	LNodes *p, *q;
+	char t;
+	LNode_T<char> *p = new LNode_T<char>(1);
+	LNode_T<char>* q = new LNode_T<char>(1);
 
-	if (L != NULL)
+	Stack_T<char>* S = new Stack_T<char>(10, 5);
+
+	if (L->isEmpty() == false)
 	{
-		q = L;
-		p = L->next;
+		q = L->GetNext();
+		//q->copy()
+		//p = q->GetNext();
+		t = q->GetData();
+		S->push_inc(t);
+		q = q->GetNext();
 
-		while (p)
+		while (q)
 		{
-			if (p->data == q->data)
-				;
+			//p = q->GetNext();
+
+			if (q->GetData() != S->GetTop())
+			{
+				t = q->GetData();
+				S->push_inc(t);
+			}
+			else if (q->GetData() == S->GetTop())
+			{
+				
+				S->pop(t);
+			}
+
+			q = q->GetNext();
 		}
 
-		return true;
+		if (S->isEmpty())
+			return true;
 	}
 
 	return false;

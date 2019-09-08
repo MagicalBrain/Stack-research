@@ -13,6 +13,14 @@ private:
 	class LNode_T* next;
 public:
 	LNode_T(int tou);
+	Type GetData()
+	{
+		return data;
+	}
+	LNode_T* GetNext()
+	{
+		return next;
+	}
 	void copy(LNode_T p)
 	{
 		this->data = p->data;
@@ -23,9 +31,12 @@ public:
 		this->data = p->data;
 		this->next = p->next;
 	}
-	//LNode_T*(int tou);
+	//LNode_T*(int tou)
 	int Length(int tou);
-	//bool isEmpty() const;
+	bool isEmpty() const
+	{
+		return this == NULL;
+	}
 	//bool isFull() const;
 	int LocateElem(int tou, Type e);
 	int GetElem(int tou, int loca);
@@ -37,6 +48,7 @@ public:
 };
 // LinkedList_T, LNode_T*;
 
+//构造函数
 template<class Type>
 LNode_T<Type>::LNode_T(int tou)
 {
@@ -52,7 +64,7 @@ LNode_T<Type>::LNode_T(int tou)
 }
 
 
-
+//求链表长度
 template<class Type>
 int LNode_T<Type>::Length(int tou)
 {
@@ -92,6 +104,7 @@ int LNode_T<Type>::Length(int tou)
 	return 0;
 }
 
+//获取链表中某元素的序号
 template<class Type>
 int LNode_T<Type>::LocateElem(int tou, Type e)
 {
@@ -136,6 +149,7 @@ int LNode_T<Type>::LocateElem(int tou, Type e)
 	return -1;
 }
 
+//根据序号访问链表中对应的节点数值
 template<class Type>
 int LNode_T<Type>::GetElem(int tou, int loca)
 {
@@ -176,6 +190,7 @@ int LNode_T<Type>::GetElem(int tou, int loca)
 	return -1;
 }
 
+//在链表中插入元素
 template<class Type>
 int LNode_T<Type>::LinkListInsert(int tou, Type e, int loca)
 {
@@ -263,8 +278,7 @@ int LNode_T<Type>::LinkListInsert(int tou, Type e, int loca)
 	return 0;
 }
 
-//template<class Type>
-//int LNode_T<Type>::LinkListInsert(int tou, Type e, int loca)
+//删除链表中对应的元素的结点
 template<class Type>
 void LNode_T<Type>::LinkListDelete(int tou, Type e)
 {
@@ -325,7 +339,7 @@ void LNode_T<Type>::LinkListDelete(int tou, Type e)
 //给链表输入数据
 ////带头结点的
 template<class Type>
-void LNode_T<Type>::LinkedInput_T(Type a[], int length, int tou)
+void LNode_T<Type>::LinkedInput_T(Type* a, int length, int tou)
 {
 	/*参数:
 	tou:
@@ -362,6 +376,7 @@ void LNode_T<Type>::LinkedInput_T(Type a[], int length, int tou)
 
 }
 
+//输出链表中所有结点的数值
 template<class Type>
 bool LNode_T<Type>::LinkedOutput_T(int tou)
 {
