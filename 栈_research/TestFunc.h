@@ -74,11 +74,12 @@ bool Testfunc03()
 */
 //template<class Type>
 void Testfunc04()
+//3.1 王道 T4
 {
 	int a[5] = {1,2,3,4,5};
 	LNode_T<char> L(1);
 	
-	char* s = "xyxyxx";
+	char* s = "xxyyxx";
 	L.LinkedInput_T(s, 6, 1);
 	L.LinkedOutput_T(1);
 
@@ -90,5 +91,10 @@ void Testfunc04()
 	else
 		cout << "不是中心对称的！" << endl;
 	//LinkedInput(L, a[10], 10, 0);
+
+}
+
+void Testfunc05()
+{
 
 }
