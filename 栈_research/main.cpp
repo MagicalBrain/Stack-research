@@ -29,7 +29,8 @@ int main()
 	//TestfuncTemplateLink();
 	
 	//Testfunc03();
-	Testfunc04();
+	//Testfunc04();
+	Testfunc05();
 
 	return 0;
 }

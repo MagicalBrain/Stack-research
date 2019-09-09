@@ -89,7 +89,3 @@ bool func04(LNode_T<char>* L)
 	return false;
 }
 
-bool func05()
-{
-	return false;
-}

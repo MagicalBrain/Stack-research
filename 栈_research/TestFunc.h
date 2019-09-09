@@ -8,6 +8,7 @@
 #include "Function.h"
 #include "TemplateStack.h"
 #include "TemplateLinkList.h"
+#include "GStack.h"
 
 
 using namespace std;
@@ -96,5 +97,16 @@ void Testfunc04()
 
 void Testfunc05()
 {
+	GStack* L;
+	L = (GStack*)malloc(sizeof(GStack));
+	GStack_Init(L);
 
+	int a1[5] = {1,2,3,4,5};
+	int a2[5] = { 10,12,13,14,15 };
+
+	for (int i = 0; i < 5; i++)
+	{
+		func05_push(L, 1, a1[i]);
+		func05_push(L, 0, a2[i]);
+	}
 }
