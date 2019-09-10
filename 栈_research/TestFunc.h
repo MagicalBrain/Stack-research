@@ -110,3 +110,77 @@ void Testfunc05()
 		func05_push(L, 0, a2[i]);
 	}
 }
+
+
+void Testfunc06()
+{
+	char* str = "(asd[)]";
+	//Stack_T<char> s(10, 5);
+
+	if (func06(str))
+	{
+		cout << "括号匹配！" << endl;
+	}
+	else
+	{
+		cout << "括号不匹配！" << endl;
+	}
+}
+
+void Testfunc07()
+{
+	//ElemType e;
+	//SqStack L;
+	
+	int num;
+	cout << "输入车厢数量：" << endl;
+	cin >> num;
+	char *s1 = (char*)malloc(num*sizeof(char));
+
+	cout << "输入车厢序列：" << endl;
+	cin >> s1;
+
+	int l = 0;
+	while (s1[l] != '\0')
+	{
+		l++;
+	}
+
+	//InitStack_Sq(L, 9, 5);
+	try
+	{
+		if (l != num )
+		{
+			Error err(-1, "车厢序列输入错误!");
+			throw (err);
+			//exit(0);// return false;
+		}
+		//函数调用测试在这个位置：
+		func07(s1);
+	}
+	catch (Error e)
+	{
+		e.showerror();
+		exit(0);
+	}
+	catch (...)
+	{
+		cout << "发生了其他异常" << endl;
+		exit(0);
+	}
+
+	//return true;
+}
+
+void Testfunc08()
+{
+	int x,n;
+	cout << "输入x,n：" << endl;
+	cin >> x >> n;
+
+	int re;
+	re = func08_D(x,n);
+	cout << "结果是：" << re << endl;
+	re = func08_Z(x, n);
+	cout << "结果是：" << re << endl;
+}
